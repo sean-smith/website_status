@@ -15,11 +15,11 @@ def send_mail(url, email):
     sender = email
     receiver = [email]
 
-    message = """
+    message = """From: From Person <"""+email+""">
+    To: To Person <"""+email+""">
     Subject: WEBSITE MAIL
 
-    Your website """+url """is down!.
-    """
+    Your website """+url+ """is down!."""
 
     try:
        smtpObj = smtplib.SMTP('localhost')
@@ -37,10 +37,10 @@ def send_yo(username, url):
 def main():
     f = open("settings.txt", "r")
     for line in f:
-        print line
+        #print line
         if line[0] != "#":
             params = line.split()
-            print(params)
+            #print(params)
             if len(params) < 3:
                 print "There must be at least three parameters (yo_username is optional)"
                 print "url string email yo_username"

@@ -1,4 +1,4 @@
 #Each line with a hastag as it's first letter is ignored
 #the string_in_page is case sensitive and cannot contain a space
 # url string_in_page email yo_username
-http://seanssmith Sean seanwssmith@gmail.com ssmith
+http://google.com Google your@email.com my_yo_username
