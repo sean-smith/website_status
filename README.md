@@ -21,3 +21,5 @@ Add in your crontab how often you'd like to check your page. The */5 indicates e
 Next edit the settings.txt file and add in the url, string and email (optionally add in yo username):
 
     http://addresstocheck.com string_to_find email yo_username
+
+To get this to work you need to set up an smtp server which can be tricky. Try this tutorial of you're using a mac: http://www.phase2technology.com/blog/how-to-enable-local-smtp-server-postfix-on-os-x-leopard/
