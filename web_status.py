@@ -13,18 +13,17 @@ def is_website_working(url, string_in_page):
 
 def send_mail(url, email):
     sender = email
-    receivers = [email]
+    receiver = [email]
 
-    message = """From: From Person <seanwssmith@gmail.com>
-    To: To Person <seanwssmith@gmail.com>
+    message = """
     Subject: WEBSITE MAIL
 
-    Your website is down!.
+    Your website """+url """is down!.
     """
 
     try:
        smtpObj = smtplib.SMTP('localhost')
-       smtpObj.sendmail(sender, receivers, message)
+       smtpObj.sendmail(sender, receiver, message)
        print "Successfully sent email"
     except:
        print "Error: unable to send email"
@@ -49,7 +48,9 @@ def main():
             url = params[0]
             string = params[1]
             email = params[2]
-            print(url, string, email)
+            yo_username = ""
+            if len(params) == 4:
+                yo_username = params[3]
             if not is_website_working(url, string):
                 if yo_username != "":
                     send_yo(yo_username, url)
