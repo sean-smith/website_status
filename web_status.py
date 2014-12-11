@@ -9,12 +9,11 @@ def is_website_working(url, string_in_page):
             return False
         return True
     except:
-        send_mail(url)
         return False
 
-def send_mail(url):
-    sender = 'seanwssmith@gmail.com'
-    receivers = ['seanwssmith@gmail.com']
+def send_mail(url, email):
+    sender = email
+    receivers = [email]
 
     message = """From: From Person <seanwssmith@gmail.com>
     To: To Person <seanwssmith@gmail.com>
@@ -30,25 +29,36 @@ def send_mail(url):
     except:
        print "Error: unable to send email"
 
-
-
 def send_yo(username, url):
-    data={'api_token': "048fd446-d462-4524-93c0-ad644d3387ee", 'username': username}
+    data={'api_token': "8784db87-d95d-4fad-92d6-3e1a10bd4200", 'username': username}
     data["link"] = url
     r = requests.post("http://api.justyo.co/yo/", data)
     return r.status_code
 
-
-
-
-
-
 def main():
-    return 2
+    f = open("settings.txt", "r")
+    for line in f:
+        print line
+        if line[0] != "#":
+            params = line.split()
+            print(params)
+            if len(params) < 3:
+                print "There must be at least three parameters (yo_username is optional)"
+                print "url string email yo_username"
+                return False
+            url = params[0]
+            string = params[1]
+            email = params[2]
+            print(url, string, email)
+            if not is_website_working(url, string):
+                if yo_username != "":
+                    send_yo(yo_username, url)
+                send_mail(url, email)
+                print "Website "+url+" down :("
+            else:
+                print "Website "+url+" running status 200 :)"
 
 
 
-
-
-print is_website_working("http://seanssmith.me/", "Sean")
-send_mail("url")
+if __name__ == '__main__':
+    main()
