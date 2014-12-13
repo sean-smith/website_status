@@ -15,11 +15,12 @@ def send_mail(url, email):
     sender = email
     receiver = [email]
 
-    message = """From: From Person <"""+email+""">
-    To: To Person <"""+email+""">
+    message = """From: <"""+email+""">
+    To: <"""+email+""">
     Subject: WEBSITE MAIL
 
-    Your website """+url+ """is down!."""
+    Your website """+url+ """ is down!.
+    """
 
     try:
        smtpObj = smtplib.SMTP('localhost')
@@ -35,7 +36,7 @@ def send_yo(username, url):
     return r.status_code
 
 def main():
-    f = open("settings.txt", "r")
+    f = open("/home/ec2-user/website_status/settings.txt", "r")
     for line in f:
         #print line
         if line[0] != "#":
