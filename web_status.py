@@ -4,6 +4,9 @@
 import requests
 import smtplib
 
+exec(open(inemail.py))
+
+
 def is_website_working(url, string_in_page):
     try:
         r = requests.get(url)
@@ -57,7 +60,8 @@ def main():
             if not is_website_working(url, string):
                 if yo_username != "":
                     send_yo(yo_username, url)
-                send_mail(url, email)
+                
+		send_mail(url, email)
                 print "Website "+url+" down :("
             else:
                 print "Website "+url+" running status 200 :)"
