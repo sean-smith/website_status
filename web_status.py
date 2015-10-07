@@ -36,7 +36,7 @@ def send_yo(username, url):
     return r.status_code
 
 def main():
-    f = open("/home/ec2-user/website_status/settings.txt", "r")
+    f = open("settings.txt", "r")
     for line in f:
         #print line
         if line[0] != "#":
