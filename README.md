@@ -22,4 +22,4 @@ Next edit the settings.txt file and add in the url, string and email (optionally
 
     http://addresstocheck.com string_to_find email yo_username
 
-To get this to work you need to set up an smtp server which can be tricky. Try this tutorial of you're using a mac: http://www.phase2technology.com/blog/how-to-enable-local-smtp-server-postfix-on-os-x-leopard/
+You can use any email client that supports smtp like gmail or yahoo mail. Simply edit the smtp address and port in the inemail.py file. Instructions for gmail can be found here: https://www.digitalocean.com/community/tutorials/how-to-use-google-s-smtp-server

@@ -2,7 +2,8 @@
 #the string_in_page is case sensitive and cannot contain a space
 # url string_in_page email yo_username
 http://seanssmith.me Sean seanwssmith@gmail.com ssmith
-http://54.148.80.59:80/ work seanwssmith@gmail.com ssmith
-http://54.148.80.59:81/ Yo seanwssmith@gmail.com ssmith
-http://54.148.80.59:82/ Hackathon seanwssmith@gmail.com ssmith
+http://api.seanssmith.me "Name": seanwssmith@gmail.com ssmith
+#http://54.148.80.59:80/ work seanwssmith@gmail.com ssmith
+#http://54.148.80.59:81/ Yo seanwssmith@gmail.com ssmith
+#http://54.148.80.59:82/ Hackathon seanwssmith@gmail.com ssmith
 http://yomessage.me/ Yo seanwssmith@gmail.com ssmith
