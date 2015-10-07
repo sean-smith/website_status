@@ -4,7 +4,6 @@
 import requests
 import smtplib
 
-exec(open(inemail.py))
 
 
 def is_website_working(url, string_in_page):
